@@ -1,0 +1,25 @@
+.chat {
+    background-color: rgb(124, 234, 234);
+    height: 250px;
+    
+}
+
+.toptext{
+
+    font-size: 50px;
+    color: aliceblue;
+    background-color: black;
+    margin: 0px;
+    padding: 50px;
+}
+
+.kontakte{
+
+    margin: 0px;
+}
+
+.macondo {
+  font-family: "Macondo Swash Caps", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
