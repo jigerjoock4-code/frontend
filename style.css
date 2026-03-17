@@ -1,25 +1,26 @@
-.chat {
-    background-color: rgb(124, 234, 234);
-    height: 250px;
-    
+.bild{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+
 }
 
-.toptext{
+.Nachricht{
 
-    font-size: 50px;
-    color: aliceblue;
-    background-color: black;
-    margin: 0px;
-    padding: 50px;
+background-color: rgb(199, 159, 236);
+width: 300px;
+border-radius: 5%;
+
+
 }
-
-.kontakte{
-
-    margin: 0px;
+.ceren {
+    font-size:12px ;
 }
+#bten{ 
+    background-color: rgb(128, 14, 181);
+    color: beige;
+    border-radius: 25px;
+    cursor: pointer;
 
-.macondo {
-  font-family: "Macondo Swash Caps", cursive;
-  font-weight: 400;
-  font-style: normal;
 }
+#mishel{width: 225px;}
