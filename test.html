@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nachrichten-App</title>
+  <link rel="stylesheet" href="test.css" />
+</head>
+<body>
+  <div class="app">
+
+
+    <header class="header">
+      <h1>Unsere Nachrichten-App</h1>
+      <p>Bleib in Verbindung!</p>
+      <div class="mark"></div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <section class="card">
+          <h2 class="Ver">Mein Profil</h2>
+          <p>Name: Max Mustermann</p>
+          <p>@max_dev</p>
+          
+        </section>
+
+        <section class="card">
+          <h2>Kontakte</h2>
+          <label for="contact-search">Kontakt suchen</label>
+          <input id="contact-search" class="input" type="text" placeholder="Finde Freunde..." />
+          <p><img class="contact-avatar" src="https://i.pravatar.cc/40?u=Leo" alt="" />Leo</p>
+          <p><img class="contact-avatar" src="https://i.pravatar.cc/40?u=Mia" alt="" />Mia</p>
+          <p><img class="contact-avatar" src="https://i.pravatar.cc/40?u=Tom" alt="" />Tom</p>
+        </section>
+      </aside>
+
+      <main class="chat">
+        <h2>Aktueller Chat</h2>
+        <div class="chat-area">
+          <div class="message-bubble">
+            <img class="message-avatar" src="https://i.pravatar.cc/40?u=Mia" alt="" />
+            <a class="message-name" href="#">Mia</a>
+            <span class="message-text">Hey, hast du meinen sprechenden Goldfisch gesehen? Er schuldet mir noch 5 Euro!</span>
+          </div>
+          <div class="message-bubble">
+            <img class="message-avatar" src="https://i.pravatar.cc/40?u=Du" alt="" />
+            <a class="message-name" href="#">Du</a>
+            <span class="message-text">Haha, nein, aber ich hab gerade versucht, mit meiner Katze über das Wetter zu diskutieren. Sie hat mich nur angeblinzelt.</span>
+          </div>
+          <div class="message-bubble">
+            <img class="message-avatar" src="https://i.pravatar.cc/40?u=Mia" alt="" />
+            <a class="message-name" href="#">Mia</a>
+            <span class="message-text">Mein Kühlschrank hat mir heute Morgen erzählt, dass er eine Diät macht. Ich glaube, er ist eifersüchtig auf die Speisekammer.</span>
+          </div>
+          <div class="message-bubble">
+            <img class="message-avatar" src="https://i.pravatar.cc/40?u=Du" alt="" />
+            <a class="message-name" href="#">Du</a>
+            <span class="message-text">Wusstest du, dass Einhörner auch Montagsmuffel sind? Schwer zu glauben, aber wahr!</span>
+          </div>
+        </div>
+
+        <section>
+          <h3>Nachricht senden</h3>
+          <form>
+            <label for="message-input">Deine Nachricht</label>
+            <input id="message-input" class="input" type="text" placeholder="Tippe hier..." />
+            <button class="btn" type="button">Senden</button>
+          </form>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <p>Nachrichten-App Projekt - Basis-Version</p>
+    </footer>
+  </div>
+  <script src="js.js" defer></script>
+</body>
+</html>

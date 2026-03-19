@@ -1,0 +1,140 @@
+body {
+      margin: 0;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(180deg, #acdd40 0%, #ffffff 100%);
+      color: #2b2340;
+      animation: myAnim 2s ease 0s 1 normal forwards;
+
+    }
+
+
+
+    .app { max-width: 1100px; margin: 0 auto; }
+    .header { 
+
+        border: 10px solid #ffffff;
+        background: #a7d9b9; /* Heller grüner Header */ 
+        padding: 20px;  
+        margin-bottom: 16px;
+        position: relative;
+    }
+
+    .card, .chat, .footer {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+
+    .input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #c0e0cc; /* Passender Grünton für Border */
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+    
+    .btn {
+      padding: 10px 14px;
+      border: none;
+      border-radius: 10px;
+      background: #2d8c4e; /* Dunklerer grüner Button */
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .contact-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #d4eeda; /* Sehr heller Grünton für Avatar Hintergrund */
+      border: 1px solid #c0e0cc;
+      vertical-align: middle;
+      margin-right: 8px;
+    }
+
+    .chat-area {
+      padding: 6px 0;
+      margin-bottom: 12px;
+    }
+
+    .message-bubble {
+      background: #f0f8f3; /* Noch hellerer Grünton für Nachrichtenblase */
+      border-radius: 10px;
+      padding: 8px 10px;
+      margin-bottom: 8px;
+    }
+
+    .message-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 8px;
+      border: 1px solid #c0e0cc;
+    }
+
+    .message-name {
+      color: #2d8c4e; /* Dunklerer Grünton für Namen */
+      font-weight: 700;
+      text-decoration: none;
+      margin-right: 6px;
+    }
+    h1, h2, h3 { margin: 0 0 8px; color: #2d8c4e; } /* Dunklerer Grünton für Überschriften */
+    p { margin: 4px 0; }
+
+    @keyframes myAnim {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 0;
+		transform: translateY(-250px);
+	}
+
+	38% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	55% {
+		animation-timing-function: ease-in;
+		transform: translateY(-65px);
+	}
+
+	72% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	81% {
+		animation-timing-function: ease-in;
+		transform: translateY(-28px);
+	}
+
+	90% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+
+	95% {
+		animation-timing-function: ease-in;
+		transform: translateY(-8px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		transform: translateY(0);
+	}
+}
+.mark {
+
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    top: 90px;
+    left: 1000px;
+    transform: rotate(45deg);
+    z-index: -1;
+}
