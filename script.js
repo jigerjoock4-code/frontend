@@ -1,21 +1,38 @@
-let alter = 13
-const alterVonName = 14
+const userName = "Ana";
+    const greetingElement = document.querySelector("#user-greeting");
+    const profileName = document.querySelector("#profile-name");
 
-let hausnummer = 18
-let lichtIstAn = true
-let contacts = ["arda" ," Trump","elon Musk",4,true,[4,5]]
-let profil = {
-name:"finn",
-tel:21772283,
-adresse:"heilbronn str weinsbergerstrase nr 5",
-gleicheFreunde:{
-fr1:"ben",
-fr2:"simon",
+    greetingElement.textContent = "Willkommen, " + userName + "!";
+    profileName.textContent = userName + " Atwell"
 
+
+
+  
+             
+         
+
+let begruessung =document.querySelector("#user-greeting")
+
+begruessung.textContent="Klasse AIM für Frontend"
+
+
+
+const kontakt1 =document.querySelector("#a")
+kontakt1.innerText = "Simon"
+
+const kontakt2 =document.querySelector("#b")
+kontakt2.innerText = "Finn"
+
+const kontakt3 =document.querySelector("#c")
+kontakt3.innerText = "Tinescha"
+
+const uber =document.querySelector("#uber")
+uber.innerText = "Guter Messenger"
+
+const profil ={
+name:"Simon",
+userName:"Simon der große"
 }
-}
-
-
-console.log()
-
-
+const profileTag = document.querySelector("#profilename")
+console.log(profileTag)
+profileTag.textContent = profil.name

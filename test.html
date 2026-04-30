@@ -3,84 +3,118 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nachrichten-App</title>
+  <title>Messenger - Lektion 6</title>
+
   <link rel="stylesheet" href="test.css" />
-  
 </head>
 <body>
-  
   <div class="app">
 
+    <!-- =========================================================
+         HEADER
+    ========================================================= -->
+    <header class="app-header">
+      <div class="header-banner">
+        <div class="brand">
+          <div class="brand-logo">M</div>
 
-    <header class="header">
-      <h1>Unsere Nachrichten-App</h1>
-      <p>Bleib in Verbindung!</p>
-      <div class="mark"></div>
+          <div>
+            <h1 id="uber">Messenger</h1>
+            <p id="user-greeting">
+              Willkommen!
+            </p>
+          </div>
+        </div>
+      </div>
     </header>
 
+    <!-- =========================================================
+         MAIN
+    ========================================================= -->
     <div class="layout">
+
+      <!-- SIDEBAR -->
       <aside class="sidebar">
+
         <section class="card">
-          <h2 class="Ver">Mein Profil</h2>
-          <p>Name: Max Mustermann</p>
-          <p>@max_dev</p>
-          
+          <div class="lesson-badge">M</div>
+          <h2 class="section-title">Mein Profil</h2>
+
+          <div class="profile-box">
+            <div class="avatar" id="profile-avatar">M</div>
+
+            <div class="profile-info">
+              <h2 id="profilename">AnaAtwell</h2>
+              <p id="profile-username" class="muted">@ana_dev</p>
+            </div>
+          </div>
         </section>
 
-      <section id="ger" class="card">
-          <h2>Kontakte</h2>
-          <label for="contact-search">Kontakt suchen</label>
-          <input id="contact-search" class="input" type="text" placeholder="Finde Freunde..." />
-          <p><img class="contact-avatar" src="https://i.pravatar.cc/40?u=Leo" alt="" />Leo</p>
-          <p><img class="contact-avatar" src="https://i.pravatar.cc/40?u=Mia" alt="" />Mia</p>
-          <p><img class="contact-avatar" src="https://i.pravatar.cc/40?u=Tom" alt="" />Tom</p>
+        <section class="card">
+          <div class="lesson-badge">M</div>
+          <h2 class="section-title">Kontakte</h2>
+
+          <div class="contacts-search">
+            <input
+              type="text"
+              id="contact-search"
+              class="input"
+              placeholder="Kontakt suchen..."
+             
+            />
+          </div>
+
+          <div class="contacts-list" id="contacts-list">
+            <div id="a" class="contact-item"><img class="contact-avatar" src="https://i.pravatar.cc/40?u=Anna" alt="" />Anna</div>
+            <div id="b"  class="contact-item"><img class="contact-avatar" src="https://i.pravatar.cc/40?u=Ben" alt="" />Ben</div>
+            <div id="c"  class="contact-item"><img class="contact-avatar" src="https://i.pravatar.cc/40?u=Clara" alt="" />Clara</div>
+          </div>
         </section>
       </aside>
 
-      <main class="chat">
-        <h2>Aktueller Chat</h2>
-        <div class="chat-area">
-          <div class="message-bubble">
-            <img class="message-avatar" src="https://i.pravatar.cc/40?u=Mia" alt="" />
-            <a class="message-name" href="#">Mia</a>
-            <span class="message-text">Hey, hast du meinen sprechenden Goldfisch gesehen? Er schuldet mir noch 5 Euro!</span>
-          </div>
-          <div class="message-bubble">
-            <img class="message-avatar" src="https://i.pravatar.cc/40?u=Du" alt="" />
-            <a class="message-name" href="#">Du</a>
-            <span class="message-text">Haha, nein, aber ich hab gerade versucht, mit meiner Katze über das Wetter zu diskutieren. Sie hat mich nur angeblinzelt.</span>
-          </div>
-          <div class="message-bubble">
-            <img class="message-avatar" src="https://i.pravatar.cc/40?u=Mia" alt="" />
-            <a class="message-name" href="#">Mia</a>
-            <span class="message-text">Mein Kühlschrank hat mir heute Morgen erzählt, dass er eine Diät macht. Ich glaube, er ist eifersüchtig auf die Speisekammer.</span>
-          </div>
-          <div class="message-bubble">
-            <img class="message-avatar" src="https://i.pravatar.cc/40?u=Du" alt="" />
-            <a class="message-name" href="#">Du</a>
-            <span class="message-text">Wusstest du, dass Einhörner auch Montagsmuffel sind? Schwer zu glauben, aber wahr!</span>
-          </div>
-        </div>
+      <!-- CHAT -->
+      <main class="main">
+        <section class="chat-topbar">
+          <h2>Chat-Verlauf</h2>
+        </section>
 
-        <section>
-          <h3>Nachricht senden</h3>
-          <form>
-            <label for="message-input">Deine Nachricht</label>
-            <input id="message-input" class="input" type="text" placeholder="Tippe hier..." />
-            <button class="btn" type="button">Senden</button>
+        <section class="chat-area" id="chat-area">
+          <!-- Nachrichten kommen mit JavaScript -->
+        </section>
+
+        <section class="message-panel">
+          <form id="message-form">
+            <label for="message-input" class="section-title">Neue Nachricht</label>
+
+            <div class="form-row">
+              <input
+                type="text"
+                id="message-input"
+                class="input message-input"
+                placeholder="Schreibe eine Nachricht..."
+               
+              />
+
+              <button type="button" class="btn" id="toggle-emoji-btn">😊 Emoji</button>
+              <button type="submit" class="btn btn-primary">Senden</button>
+            </div>
+
+            <div class="emoji-panel" id="emoji-panel"></div>
+
+            <div class="form-info">
+              <p class="validation-message" id="validation-message"></p>
+              <p>Zeichen: <span id="char-count">0</span></p>
+            </div>
           </form>
         </section>
       </main>
-
-
-
-
     </div>
 
-    <footer class="footer">
-      <p>Nachrichten-App Projekt - Basis-Version</p>
+    <footer class="app-footer">
+      Messenger Projekt – vereinfachte Version
     </footer>
   </div>
-  <script src="js.js" defer></script>
+
+  <script src="script.js" defer></script>
 </body>
 </html>

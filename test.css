@@ -1,153 +1,476 @@
-body {
+/* =========================================================
+       1. BASIS
+    ========================================================= */
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+    }
+
+    body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(180deg, #acdd40 0%, #ffffff 100%);
+      background:
+        linear-gradient(180deg, #6a2c91 0%, #7a38a4 22%, #f7f3fb 22%, #f7f3fb 100%);
       color: #2b2340;
-      animation: myAnim 2s ease 0s 1 normal forwards;
-
+      line-height: 1.5;
     }
 
-
-
-    .app { max-width: 1100px; margin: 0 auto; }
-    .header { 
-
-        border: 10px solid #ffffff;
-        background: #a7d9b9; /* Heller grüner Header */ 
-        padding: 20px;  
-        margin-bottom: 16px;
-        position: relative;
+    button,
+    input {
+      font: inherit;
     }
 
-    .card, .chat, .footer {
+    /* =========================================================
+       2. LAYOUT
+    ========================================================= */
+    .app {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .app-header {
+      padding: 24px 20px 16px;
+    }
+
+    .header-banner {
+      background: #f4d24d;
+      border: 10px solid rgba(255, 255, 255, 0.9);
+      padding: 32px;
+      box-shadow: 0 10px 24px rgba(106, 44, 145, 0.08);
+      position: relative;
+    }
+
+    .header-banner::after {
+      content: "";
+      position: absolute;
+      left: 70px;
+      bottom: -24px;
+      width: 36px;
+      height: 36px;
+      background: white;
+      transform: rotate(45deg);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: #6a2c91;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 29px;
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .brand h1 {
+      color: #6a2c91;
+      font-size: 32px;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .brand p {
+      color: #552176;
+      font-size: 16px;
+      max-width: 520px;
+    }
+
+    .layout {
+      display: flex;
+      gap: 20px;
+      padding: 24px 20px 32px;
+      flex: 1;
+      min-height: 0;
+      align-items: stretch;
+    }
+
+    .sidebar {
+      width: 320px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-height: 0;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+    }
+
+    .app-footer {
+      padding: 13px 20px 24px;
+      color: #6d6485;
+      font-size: 15px;
+    }
+
+    /* =========================================================
+       3. UI
+    ========================================================= */
+    .card {
       background: #ffffff;
-      border-radius: 14px;
-      padding: 14px;
+      border: 1px solid #eadff5;
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 10px 24px rgba(106, 44, 145, 0.08);
+    }
+
+    
+    .card {
+      position: relative;
+    }
+
+    .lesson-badge {
+      position: absolute;
+      top: -10px;
+      right: 12px;
+      z-index: 5;
+      background: #6a2c91;
+      color: #ffffff;
+      font-size: 12px;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+    .section-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #6a2c91;
       margin-bottom: 12px;
+    }
+
+    .muted {
+      color: #6d6485;
+      font-size: 15px;
+    }
+
+    .btn {
+      border: none;
+      border-radius: 14px;
+      padding: 11px 16px;
+      cursor: pointer;
+      background: #f3ecfa;
+      color: #6a2c91;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      background: #eadcf7;
+    }
+
+    .btn-primary {
+      background: #6a2c91;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #552176;
     }
 
     .input {
       width: 100%;
-      box-sizing: border-box;
-      padding: 10px;
-      border: 1px solid #c0e0cc; /* Passender Grünton für Border */
-      border-radius: 10px;
-      margin-bottom: 10px;
+      border: 1px solid #d8c9ea;
+      border-radius: 14px;
+      padding: 13px 15px;
+      outline: none;
+      background: white;
+      transition: 0.2s ease;
     }
+
+    .input:focus {
+      border-color: #6a2c91;
+      box-shadow: 0 0 0 4px rgba(106, 44, 145, 0.12);
+    }
+
+    .error {
+      border: 2px solid #d64545 !important;
+      background: #fff6f6 !important;
+    }
+
+    .success {
+      border: 2px solid #1b9c5a !important;
+      background: #f4fff8 !important;
+    }
+
+    /* =========================================================
+       4. SIDEBAR
+    ========================================================= */
+    .profile-box {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #e6dcf3;
+      color: #6a2c91;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .profile-info h2 {
+      font-size: 20px;
+      margin-bottom: 2px;
+    }
+
+    .contacts-search {
+      margin-bottom: 13px;
+    }
+
+    .contacts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+    }
+
+    .sidebar .card:last-child {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
     
-    .btn {
-      padding: 10px 14px;
-      border: none;
-      border-radius: 10px;
-      background: #2d8c4e; /* Dunklerer grüner Button */
-      color: #ffffff;
-      cursor: pointer;
+    
+    .contact-item {
+      border: 1px solid #efe6f7;
+      border-radius: 14px;
+      padding: 13px 14px;
+      background: #fcf9ff;
+      color: #2b2340;
     }
 
     .contact-avatar {
-      width: 24px;
-      height: 24px;
+      width: 28px;
+      height: 28px;
       border-radius: 50%;
-      background: #d4eeda; /* Sehr heller Grünton für Avatar Hintergrund */
-      border: 1px solid #c0e0cc;
+      background: #e6dcf3;
+      border: 1px solid #d8c9ea;
       vertical-align: middle;
       margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    .empty-state {
+      padding: 14px;
+      border-radius: 14px;
+      background: #faf5ff;
+      color: #6d6485;
+      font-size: 15px;
+    }
+
+    .emoji-panel {
+      margin-top: 12px;
+      display: none;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .emoji-panel.show {
+      display: flex;
+    }
+
+    .emoji-btn {
+      border: 1px solid #e6d9f4;
+      border-radius: 14px;
+      background: white;
+      padding: 9px 12px;
+      cursor: pointer;
+      color: #6a2c91;
+      min-width: 46px;
+      font-size: 18px;
+    }
+
+    .emoji-btn:hover {
+      background: #f7f0ff;
+    }
+
+    /* =========================================================
+       5. CHAT
+    ========================================================= */
+    .chat-topbar {
+      background: #ffffff;
+      border: 1px solid #eadff5;
+      border-radius: 20px 20px 0 0;
+      padding: 16px 18px;
+      box-shadow: 0 10px 24px rgba(106, 44, 145, 0.08);
+    }
+
+    .chat-topbar h2 {
+      color: #6a2c91;
+      font-size: 20px;
+      margin-bottom: 2px;
+    }
+
+    .chat-meta {
+      color: #6d6485;
+      font-size: 15px;
     }
 
     .chat-area {
-      padding: 6px 0;
-      margin-bottom: 12px;
+      flex: 1;
+      min-height: 0;
+      max-height: 560px;
+      background: linear-gradient(180deg, #fffdf7 0%, #fff7db 100%);
+      border-left: 1px solid #eadff5;
+      border-right: 1px solid #eadff5;
+      padding: 16px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
-    .message-bubble {
-      background: #f0f8f3; /* Noch hellerer Grünton für Nachrichtenblase */
-      border-radius: 10px;
-      padding: 8px 10px;
-      margin-bottom: 8px;
-display: flex;
-justify-content: space-between;
+    .message {
+      max-width: 72%;
+      background: white;
+      border: 1px solid #f0e7f8;
+      border-radius: 18px;
+      padding: 14px 15px;
+      box-shadow: 0 8px 18px rgba(106, 44, 145, 0.05);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
     }
 
-    .message-avatar {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      vertical-align: middle;
-      margin-right: 8px;
-      border: 1px solid #c0e0cc;
+    .message.my-message {
+      margin-left: auto;
+      background: #f4d24d;
+      border-color: #ebc735;
+    }
+
+    .message-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      min-width: 0;
     }
 
     .message-name {
-      color: #2d8c4e; /* Dunklerer Grünton für Namen */
+      margin: 0;
+      font-size: 18px;
+      color: #6a2c91;
       font-weight: 700;
+      line-height: 1.2;
       text-decoration: none;
-      margin-right: 6px;
     }
-    h1, h2, h3 { margin: 0 0 8px; color: #2d8c4e; } /* Dunklerer Grünton für Überschriften */
-    p { margin: 4px 0; }
 
-    @keyframes myAnim {
-	0% {
-		animation-timing-function: ease-in;
-		opacity: 0;
-		transform: translateY(-250px);
-	}
+    .message-text {
+      margin: 0;
+      color: #2b2340;
+      line-height: 1.35;
+    }
 
-	38% {
-		animation-timing-function: ease-out;
-		opacity: 1;
-		transform: translateY(0);
-	}
+    .message-time {
+      margin: 0;
+      font-size: 13px;
+      color: #6d6485;
+      align-self: flex-end;
+    }
 
-	55% {
-		animation-timing-function: ease-in;
-		transform: translateY(-65px);
-	}
+    .message-avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 1px solid #d8c9ea;
+      flex-shrink: 0;
+    }
 
-	72% {
-		animation-timing-function: ease-out;
-		transform: translateY(0);
-	}
+    /* =========================================================
+       6. FORM
+    ========================================================= */
+    .message-panel {
+      background: #ffffff;
+      border: 1px solid #eadff5;
+      border-top: none;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 10px 24px rgba(106, 44, 145, 0.08);
+      padding: 16px;
+    }
 
-	81% {
-		animation-timing-function: ease-in;
-		transform: translateY(-28px);
-	}
+    .form-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: stretch;
+    }
 
-	90% {
-		animation-timing-function: ease-out;
-		transform: translateY(0);
-	}
+    .message-input {
+      flex: 1;
+      min-width: 220px;
+    }
 
-	95% {
-		animation-timing-function: ease-in;
-		transform: translateY(-8px);
-	}
+    .form-info {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: #6d6485;
+      font-size: 15px;
+      margin-top: 12px;
+    }
 
-	100% {
-		animation-timing-function: ease-out;
-		transform: translateY(0);
-	}
-}
-.mark {
+    .validation-message {
+      min-height: 19px;
+    }
 
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    background-color: rgb(255, 255, 255);
-    top: 90px;
-    left: 1000px;
-    transform: rotate(45deg);
-    z-index: -1;
-}
+    /* =========================================================
+       7. RESPONSIVE
+    ========================================================= */
+    @media (max-width: 960px) {
+      .layout {
+        flex-direction: column;
+      }
 
-.layout {
+      .sidebar {
+        width: 100%;
+      }
 
-    display: flex;
-    gap: 12px;
-    
-}
-#ger {
-  height: 350px;
-}
+      .chat-area {
+        min-height: 320px;
+      }
+
+      .message {
+        max-width: 88%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .form-row,
+      .form-info,
+      .brand {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .message {
+        max-width: 100%;
+      }
+
+      .brand h1 {
+        font-size: 26px;
+      }
+    }
