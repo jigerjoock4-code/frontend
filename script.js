@@ -1,38 +1,38 @@
-const userName = "Ana";
-    const greetingElement = document.querySelector("#user-greeting");
-    const profileName = document.querySelector("#profile-name");
-
-    greetingElement.textContent = "Willkommen, " + userName + "!";
-    profileName.textContent = userName + " Atwell"
-
 
 
   
-             
-         
+let nachrichten = [
 
-let begruessung =document.querySelector("#user-greeting")
+       "Hallo Ana",
+       "Hallo Jackie",
+       "Hallo Fin",
+       "Wie geht es dir?",
+       "Tschüß",
+       "Hallo Herr Finn, wie ist es also heute",
+       "Wie wie ist es",
+       "Ja wie"
 
-begruessung.textContent="Klasse AIM für Frontend"
+]
+
+     
 
 
+for (let i = 0; i < nachrichten.length ; i++) {
 
-const kontakt1 =document.querySelector("#a")
-kontakt1.innerText = "Simon"
 
-const kontakt2 =document.querySelector("#b")
-kontakt2.innerText = "Finn"
+    console.log(nachrichten[i])
 
-const kontakt3 =document.querySelector("#c")
-kontakt3.innerText = "Tinescha"
-
-const uber =document.querySelector("#uber")
-uber.innerText = "Guter Messenger"
-
-const profil ={
-name:"Simon",
-userName:"Simon der große"
 }
-const profileTag = document.querySelector("#profilename")
-console.log(profileTag)
-profileTag.textContent = profil.name
+
+let div = document.querySelector("#chat-area")
+
+
+for(let i = 0; i<nachrichten.length; i++){
+
+let p = document.createElement("p")
+p.textContent=nachrichten[i]
+div.appendChild(p)
+
+
+}
+ 
