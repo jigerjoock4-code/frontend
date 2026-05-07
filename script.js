@@ -3,36 +3,86 @@
   
 let nachrichten = [
 
-       "Hallo Ana",
-       "Hallo Jackie",
-       "Hallo Fin",
-       "Wie geht es dir?",
-       "Tschüß",
-       "Hallo Herr Finn, wie ist es also heute",
-       "Wie wie ist es",
-       "Ja wie"
-
+ {
+    sender:"Jackie",
+    text:"Hallo Ana"
+ },
+ {
+    sender:"Du",
+    text:"Hallo Jackie"
+ },
+ {
+    sender:"Finn",
+    text:"Ich bin da"
+ },
+ {
+    sender:"Simon",
+    text:"Ich bin auch da"
+ }
 ]
 
      
 
 
-for (let i = 0; i < nachrichten.length ; i++) {
 
-
-    console.log(nachrichten[i])
-
-}
 
 let div = document.querySelector("#chat-area")
 
 
-for(let i = 0; i<nachrichten.length; i++){
 
-let p = document.createElement("p")
-p.textContent=nachrichten[i]
-div.appendChild(p)
+
+
+    for (let i = 0; i<nachrichten.length; i++ ){
+    let nachrichtenBlase = document.createElement("div")
+    nachrichtenBlase.classList.add("msg")
+
+    let sender = document.createElement("h3")
+    sender.textContent = nachrichten[i].sender
+    nachrichtenBlase.appendChild(sender)
+    let msg = document.createElement("p")
+    msg.textContent = nachrichten[i].text
+    nachrichtenBlase.appendChild(msg)
+
+
+
+
+
+    div.appendChild(nachrichtenBlase)
+    
+}
+
+
+
+
+
+
+
+
+
+
+let kontakte = [
+    "Finn",
+    "Joschka",
+    "Simon",
+    "Alper",
+    "Döner Ali",
+    "Polizei",
+    "Mülleimer an der Ecke"
+]
+
+let kontakteDiv = document.querySelector("#contacts-list")
+
+for(let i = 0; i<kontakte.length; i++){
+    let div = document.createElement("div")
+    div.textContent=kontakte[i]
+    kontakteDiv.appendChild(div)
+
+
+
 
 
 }
+
+
+
  
