@@ -344,6 +344,13 @@
       gap: 12px;
     }
 
+    
+    
+    .ander-nachrichten {
+      align-items: flex-start;
+
+    } 
+
     .message {
       max-width: 72%;
       background: white;
@@ -480,4 +487,12 @@
   width:150px ;
   border-radius: 10px ;
   padding: 5px;
+
+  
+}
+
+.meineNachrichten{ 
+  align-self: flex-end;
+   background-color: rgb(210, 89, 202);
+  
 }
