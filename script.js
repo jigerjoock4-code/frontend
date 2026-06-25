@@ -1,6 +1,6 @@
 
 
-  
+
 let nachrichten = [
 
  {
@@ -21,8 +21,6 @@ let nachrichten = [
  }
 ]
 
-     
-
 
 
 
@@ -31,33 +29,27 @@ let div = document.querySelector("#chat-area")
 
 
 
+for (let i = 0; i<nachrichten.length; i++ ){
 
-    for (let i = 0; i<nachrichten.length; i++ ){
+// erstellen wir einen Container -> also eine Nachrichtenblase
+let nachrichtenBlase  = document.createElement("div")
 
 
-    let nachrichtenBlase  = document.createElement("div")
-
-    if (nachrichten[i].sender=="Du") {
+// wenn das Objekt in der Eigenschaft sender - "Du" enthält -> 
+if (nachrichten[i].sender=="Du") 
+{
     nachrichtenBlase.classList.add("meineNachrichten")
-    }
+}
 
-    nachrichtenBlase.classList.add("msg")
-
-  
+nachrichtenBlase.classList.add("msg")
 
 let sender = document.createElement("h1")
 let msg = document.createElement("p")
-
 sender.textContent=nachrichten[i].sender
 msg.textContent=nachrichten[i].text
-    nachrichtenBlase.appendChild(sender)
-    nachrichtenBlase.appendChild(msg)
-
-
-
-
-
-    div.appendChild(nachrichtenBlase)
+nachrichtenBlase.appendChild(sender)
+nachrichtenBlase.appendChild(msg)
+div.appendChild(nachrichtenBlase)
     
     
 }

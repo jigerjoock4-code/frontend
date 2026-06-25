@@ -72,6 +72,14 @@
       font-weight: bold;
       flex-shrink: 0;
     }
+    .brand-logo > img{
+width: 110%;
+
+filter: invert(66%) sepia(5%) saturate(4%) hue-rotate(87deg) brightness(119%) contrast(111110%);
+
+    }
+
+
 
     .brand h1 {
       color: #6a2c91;
