@@ -24,19 +24,21 @@ let nachrichten = [
 
 
 
+
+
 let div = document.querySelector("#chat-area")
 
 
+function nachritenanzeigen (message){
 
-
-for (let i = 0; i<nachrichten.length; i++ ){
+for (let i = 0; i<message.length; i++ ){
 
 // erstellen wir einen Container -> also eine Nachrichtenblase
 let nachrichtenBlase  = document.createElement("div")
 
 
 // wenn das Objekt in der Eigenschaft sender - "Du" enthält -> 
-if (nachrichten[i].sender=="Du") 
+if (message[i].sender=="Du") 
 {
     nachrichtenBlase.classList.add("meineNachrichten")
 }
@@ -45,14 +47,18 @@ nachrichtenBlase.classList.add("msg")
 
 let sender = document.createElement("h1")
 let msg = document.createElement("p")
-sender.textContent=nachrichten[i].sender
-msg.textContent=nachrichten[i].text
+sender.textContent=message[i].sender
+msg.textContent=message[i].text
 nachrichtenBlase.appendChild(sender)
 nachrichtenBlase.appendChild(msg)
 div.appendChild(nachrichtenBlase)
     
     
 }
+
+}
+
+
 
 
 
@@ -82,3 +88,71 @@ for(let i = 0; i<kontakte.length; i++){
 }
 
 
+function begruessung(AIM){
+   console.log("Willkommen zum", AIM)
+}
+
+
+begruessung("AIM")
+
+
+
+
+
+let familienNachrichten = [
+
+ {
+    sender:"Mama",
+    text:"Hallo Ana"
+ },
+ {
+    sender:"Du",
+    text:"Hallo Jackie"
+ },
+ {
+    sender:"Papa",
+    text:"Ich bin da"
+ },
+ {
+    sender:"Du",
+    text:"Ich bin auch da"
+ }
+]
+
+
+
+
+
+
+function hallo(parameter) {
+
+   console.log(parameter[0].text)
+
+}
+
+hallo(familienNachrichten)
+
+
+
+familienNachrichten.forEach((message)=>{
+
+let nachrichtenBlase  = document.createElement("div")
+
+if (message.sender=="Du") 
+{
+    nachrichtenBlase.classList.add("meineNachrichten")
+}
+
+
+
+nachrichtenBlase.classList.add("msg")
+
+let sender = document.createElement("h1")
+let msg = document.createElement("p")
+sender.textContent=message.sender
+msg.textContent=message.text
+nachrichtenBlase.appendChild(sender)
+nachrichtenBlase.appendChild(msg)
+div.appendChild(nachrichtenBlase)
+
+})
