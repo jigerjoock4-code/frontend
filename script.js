@@ -69,6 +69,9 @@ div.appendChild(nachrichtenBlase)
 
 
 
+
+
+
 let kontakte = [
     "Finn",
     "Joschka",
@@ -96,9 +99,6 @@ function begruessung(AIM){
 begruessung("AIM")
 
 
-
-
-
 let familienNachrichten = [
 
  {
@@ -123,18 +123,9 @@ let familienNachrichten = [
 
 
 
+function anzeigen(msg){
 
-function hallo(parameter) {
-
-   console.log(parameter[0].text)
-
-}
-
-hallo(familienNachrichten)
-
-
-
-familienNachrichten.forEach((message)=>{
+msg.forEach((message)=>{
 
 let nachrichtenBlase  = document.createElement("div")
 
@@ -142,8 +133,6 @@ if (message.sender=="Du")
 {
     nachrichtenBlase.classList.add("meineNachrichten")
 }
-
-
 
 nachrichtenBlase.classList.add("msg")
 
@@ -156,3 +145,36 @@ nachrichtenBlase.appendChild(msg)
 div.appendChild(nachrichtenBlase)
 
 })
+
+}
+
+
+
+
+
+
+
+
+let msgListe = [
+   "Hello",
+   "How are you?"
+]
+
+anzeigen(familienNachrichten)
+
+
+const button = document.querySelector("#sendenbutton")
+const input = document.querySelector("#message-input")
+
+button.addEventListener("click",(event)=>{
+
+   
+   familienNachrichten.push({sender:"Du",text:input.value})
+   div.innerHTML = ""
+   anzeigen(familienNachrichten)
+   input.value=""
+   event.preventDefault()
+
+})
+
+
